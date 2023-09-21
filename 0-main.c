@@ -1,5 +1,8 @@
 #include "monty.h"
 
+stack_t *stack = NULL; 
+char *push_arg = NULL; 
+
 /**
  * main - entry point
  * @argc: number of arguments
@@ -12,7 +15,6 @@ int main(int argc, char *argv[])
 	char line[MAX_LINE_LENGTH];
 	FILE *file;
 	unsigned int line_number = 0;
-	char *opcode;
 
 	if (argc != 2)
 	{
@@ -29,6 +31,7 @@ int main(int argc, char *argv[])
 
 	while (fgets(line, sizeof(line), file))
 	{
+		char *opcode;
 		line_number++;
 		opcode = strtok(line, " \n");
 		if (opcode)
@@ -42,7 +45,6 @@ int main(int argc, char *argv[])
 	while (stack)
 	{
 		stack_t *temp = stack;
-
 		stack = stack->next;
 		free(temp);
 	}

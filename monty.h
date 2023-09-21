@@ -2,6 +2,7 @@
 #define MONTY_H
 
 #include <stdlib.h>
+#include <ctype.h>
 #include <stdio.h>
 #include <string.h>
 #include <stdbool.h>
@@ -38,8 +39,10 @@ typedef struct instruction_s
 
 #define MAX_LINE_LENGTH 1024
 extern stack_t *stack;
+extern char *push_arg;
 
 void push(stack_t **stack, unsigned int line_number);
 void pall(stack_t **stack, unsigned int line_number);
 void execute_instruction(char *opcode, unsigned int line_number);
+void free_stack(stack_t *stack);
 #endif

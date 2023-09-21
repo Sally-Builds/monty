@@ -8,6 +8,7 @@
 void execute_instruction(char *opcode, unsigned int line_number)
 {
 	int i;
+
 	instruction_t instructions[] = {
 		{"push", push},
 		{"pall", pall},

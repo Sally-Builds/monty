@@ -7,17 +7,32 @@
  */
 void push(stack_t **stack, unsigned int line_number)
 {
-	char *token = strtok(NULL, " \n");
+	char *token;
 	int value;
+	size_t i = 0;
 	stack_t *new_node;
 
+	token = strtok(NULL, " \n");
 	if (!token)
 	{
 		fprintf(stderr, "L%u: usage: push integer\n", line_number);
 		exit(EXIT_FAILURE);
 	}
 
+
+
+	while(i < strlen(token))
+	{
+		if (!isdigit(token[i]))
+		{
+			fprintf(stderr, "L%u: usage: push integer\n", line_number);
+			exit(EXIT_FAILURE);
+		}
+		i++;
+	}
+
 	value = atoi(token);
+
 
 	new_node = malloc(sizeof(stack_t));
 	if (!new_node)
