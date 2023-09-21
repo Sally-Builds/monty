@@ -2,6 +2,8 @@
 #define MONTY_H
 
 #include <stdlib.h>
+#include <limits.h>
+#include <errno.h>
 #include <ctype.h>
 #include <stdio.h>
 #include <string.h>
