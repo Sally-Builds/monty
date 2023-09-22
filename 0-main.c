@@ -32,7 +32,7 @@ int main(int argc, char *argv[])
 		char *opcode;
 
 		line_number++;
-		opcode = strtok(line, " \n");
+		opcode = strtok(line, " \t\r\n");
 		if (opcode)
 		{
 			execute_instruction(opcode, line_number);
