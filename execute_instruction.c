@@ -16,6 +16,8 @@ void execute_instruction(char *opcode, unsigned int line_number)
 		{"pop", pop},
 		{"swap", swap},
 		{"add", add},
+		{"div", _div},
+		{"sub", sub},
 		{"nop", nop},
 		{NULL, NULL}
 	};
