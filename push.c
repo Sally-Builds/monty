@@ -14,28 +14,11 @@ void push(stack_t **stack, unsigned int line_number)
 	stack_t *new_node;
 
 	token = strtok(NULL, " \t\r\n");
-	if (!token)
+	if (!token || is_valid_integer(token) == 0)
 	{
-		fprintf(stderr, "L%u: usage: push integer\n", line_number);
+		fprintf(stderr, "L%u usage: push integer\n", line_number);
 		exit(EXIT_FAILURE);
 	}
-
-
-	if (is_valid_integer(token) == 0)
-	{
-		fprintf(stderr, "L%u: usage: push integer\n", line_number);
-		exit(EXIT_FAILURE);
-	}
-
-	/**while(i < strlen(token))
-	  {
-	  if (!isdigit(token[i]))
-	  {
-	  fprintf(stderr, "L%u: usage: push integer\n", line_number);
-	  exit(EXIT_FAILURE);
-	  }
-	  i++;
-	  }**/
 
 	value = atoi(token);
 
