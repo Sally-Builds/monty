@@ -32,6 +32,12 @@ int main(int argc, char *argv[])
 		char *opcode;
 
 		line_number++;
+
+		if (strlen(line) == 1 && (line[0] == ' ' || line[0] == '\n'))
+		{
+			continue;
+		}
+
 		opcode = strtok(line, " \t\r\n");
 		if (opcode)
 		{
