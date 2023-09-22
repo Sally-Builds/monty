@@ -24,6 +24,9 @@ void execute_instruction(char *opcode, unsigned int line_number)
 		{NULL, NULL}
 	};
 
+	if (*opcode == '#')
+		return;
+
 	for (i = 0; instructions[i].opcode != NULL; i++)
 	{
 		if (strcmp(opcode, instructions[i].opcode) == 0)
